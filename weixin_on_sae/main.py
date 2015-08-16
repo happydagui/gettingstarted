@@ -14,7 +14,7 @@ def checkSignature(request):
     nonce = request.GET.get('nonce', None)
     echostr = request.GET.get('echostr', None)
 
-    token = '015433'
+    token = 'your token'
 
     l = [token, timestamp, nonce]
     l.sort()
