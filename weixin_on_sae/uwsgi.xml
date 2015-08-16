@@ -1,0 +1,24 @@
+<uwsgi>
+    <plugin>python</plugin>
+    <socket>127.0.0.1:8000</socket>
+    <!--
+    <socket>/tmp/weixin.socket</socket>
+    <app mountpoint="/">
+        <script>index.wsgi</script>
+    </app>
+    <chmod-socket>777</chmod-socket>-->
+    <pythonpath>/home/min/media/sdb1/workspaces/happycc/sae/source/min4weixinapp/1</pythonpath>
+    <module>index.wsgi:application</module>
+    <master>true</master>
+    <processes>1</processes>
+    <enable-threads>true</enable-threads>
+    <logdate>true</logdate>
+    <harakiri>60</harakiri>
+    <reload-mercy>8</reload-mercy>
+    <max-requests>200</max-requests>
+    <limit-as>512</limit-as>
+    <reload-on-as>256</reload-on-as>
+    <reload-on-rss>192</reload-on-rss>
+    <vacuum/>
+    <!--daemonize>/var/log/uwsgi.log</daemonize-->
+</uwsgi>

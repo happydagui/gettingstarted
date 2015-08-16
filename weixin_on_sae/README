@@ -1,0 +1,15 @@
+## How to
+- uwsgi
+uwsgi --ini uwsgi.ini
+uwsgi -x uwsgi.xml
+
+- gnicorn
+cp index.wsgi index.py
+gunicorn index:application
+
+- django native
+python index.wsgi runserver
+
+
+## sae
+<min4weixinapp.sinaapp.com>
