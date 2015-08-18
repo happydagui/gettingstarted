@@ -1,0 +1,8 @@
+" this is comment.
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+autocmd FileType python setlocal et sta sw=4 sts=4
+set number
+set expandtab
+set autoindent
