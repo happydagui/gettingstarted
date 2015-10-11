@@ -31,6 +31,18 @@ This is my notes for python and django.
 > 自动替换tab为4个空格
 > :NERDTree 可以显示目录，ctr+w+h 光标移到左侧树形目录，ctrl+w+l 光标移到右侧文件显示窗口。多次摁 ctrl+w，光标自动在左右侧窗口切换
 
+### sphinx-build 文档生成工具
+
+    sudo pip install Sphinx
+    git clone https://github.com/rpicard/explore-flask.git
+    cd explore-flask
+    sphinx-build -b latex sources/ build/
+    cd build
+    pdflatex ExploreFlask.tex
+
+上面的命令是以ExlplreFlask为例，阐述生成文档的过程。
+需要安装texlive，可以修改tex文件中的纸张设置，例如a4letter,b5letter，生成的pdf文件自动根据纸张大小打印。
+
 ### zealdoc - programming document allinone
 
     sudo add-apt-repository ppa:zeal-developers/ppa
@@ -361,14 +373,20 @@ in the template
 
     { obj.question_description|removetags:'img p div' }}
 
-## Deploy django
+## django
 
-### gunicorn
+### django manage.py 命令
+
+    python manage.py migrate --noinput
+    python manage.py inspectdb > models.py
+
+### 部署 django
+#### gunicorn
 
     pip install gunicorn
     gunicorn openexam
 
-### uwsgi
+#### uwsgi
     pip install uwsgi
     touch uwsgi.ini & vi uwsgi
     sudo mkdir -p /var/log/uwsgi
@@ -404,7 +422,7 @@ chdir(): No such file or directory [core/uwsgi.c line 2581]
 VACUUM: pidfile removed.
 chdir(): No such file or directory [core/uwsgi.c line 1603]
 
-### uwsgi + nginx
+#### uwsgi + nginx
 
 
 
